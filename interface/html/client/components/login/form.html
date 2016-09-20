@@ -1,0 +1,38 @@
+<form class="form-horizontal" name="loginForm">
+
+<legend> Rutledge Portal </legend>
+
+<div class="form-group" ng-class="{ 'has-error': loginForm.usr_acc.$invalid && !loginForm.usr_acc.$pristine }">
+  <label class="control-label col-md-4" for="usr_acc">Account</label>
+  <div class="col-md-6">
+    <input type="text" class="form-control" name="usr_acc" ng-model="login.info.usr_acc" required>
+    <p ng-show="loginForm.usr_acc.$dirty && loginForm.usr_acc.$error.required"
+      class="help-block">This field is required!</p>
+  </div>
+</div>
+
+<div class="form-group" ng-class="{ 'has-error': loginForm.usr_pwd.$invalid && !loginForm.usr_pwd.$pristine }" >
+  <label class="control-label col-md-4" for="usr_pwd">Password</label>
+  <div class="col-md-6">
+    <input type="password" class="form-control" name="usr_pwd" ng-model="login.info.usr_pwd" required>
+    <p ng-show="loginForm.usr_pwd.$dirty && loginForm.usr_pwd.$error.required"
+      class="help-block">This field is required!</p>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-md-offset-4 col-md-6">
+    <div class="checkbox">
+      <label><input type="checkbox" ng-model="login.info.remember"> Remember me</label>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-md-offset-4 col-md-6">
+    <button ng-click="login.go(loginForm.$valid)" class="btn btn-primary">Sign in</button>
+    <a class="btn" ui-sref="home.forgot">Forgot password...</a>
+  </div>
+</div>
+
+</form>

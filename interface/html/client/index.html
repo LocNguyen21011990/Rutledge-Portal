@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+
+    <title> Rutledge Portal </title>
+    <meta name="author" content="">
+    <meta name="description" content="Portal for Rutledge's Clients">
+
+    <!-- Common Styles -->
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/serviceStyles.css">
+  </head>
+
+  <body ng-app="portal.client">
+
+    <div ui-view></div>
+
+    <!-- Underlaid components -->
+    <script src="/lib/js/jquery.min.js"></script>
+    <script src="/lib/js/angular/angular.min.js"></script>
+    <script src="/lib/js/angular/angular-ui-router.min.js"></script>
+    <script src="/lib/js/underscore/underscore.js"></script>
+
+    <!-- Main scripts -->
+    <script src="/client/app.router.js"></script>
+    <script src="/client/shared/app.factory.js"></script>
+    <!-- for /home -->
+    <script src="/client/components/portal/module.js"></script>
+    <script src="/client/components/login/loginCtrl.js"></script>
+    <script src="/client/components/reset/forgotCtrl.js"></script>
+    <script src="/client/components/register/registerSrvc.js"></script>
+    <script src="/client/components/register/registerCtrl.js"></script>
+    <!-- for /reset -->
+    <script src="/client/components/reset/changePwd/module.js"></script>
+    <script src="/client/components/reset/changePwd/resetCtrl.js"></script>
+    <!-- for /services -->
+    <script src="/client/components/services/servicesSrvc.js"></script>
+    <script src="/client/components/services/servicesCtrl.js"></script>
+    <script src="/client/components/services/blockService.js"></script>
+    <script src="/client/components/services/serviceDetailCtrl.js"></script>
+    <!-- for /pricings -->
+    <script src="/client/components/pricing/pricingCtrl.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,27 @@
+{
+  "db_conn": {
+    "local": {
+      "host": "localhost", "port": "3306",
+      "user": "root", "password": "joker1106",
+      "database": "3r_portal", "debug": false
+    },
+    "development": {
+      "host": "172.16.0.68", "port": "3306",
+      "user": "dev", "password": "dev123",
+      "database": "rutledge_admin"
+    },
+    "production": {
+      "host": "172.16.0.68", "port": "3306",
+      "user": "dev", "password": "dev123",
+      "database": "rutledge_admin"
+    }
+  },
+  "serverDefault": {
+    "state": "MODE_DEV",
+    "port": 8082,
+    "interface": {
+      "JIOTARO-PC": "Ethernet 3",
+      "Asus": "Ethernet"
+    }
+  }
+}

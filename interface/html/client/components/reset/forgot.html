@@ -1,0 +1,19 @@
+<form class="form-horizontal" role="form">
+
+<legend> Reset Password </legend>
+
+<div class="form-group">
+  <label class="control-label col-md-4" for="email">Your registered email</label>
+  <div class="col-md-6">
+    <input type="text" class="form-control" id="email" ng-model="forgot.email" required="">
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-md-offset-4 col-md-6">
+    <button ng-click="forgot.go()" class="btn btn-primary">Reset</button>
+    <a class="btn" ui-sref="home">I remembered!</a>
+  </div>
+</div>
+
+</form>

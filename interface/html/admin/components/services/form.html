@@ -1,0 +1,106 @@
+<form class="form-horizontal" ng-controller="formServicesCtrl">
+
+<legend>{{titlePage}}</legend>
+
+<fieldset id="admin_account">
+<div class="form-group">
+  <label class="col-md-4 control-label" for="name">Title</label>
+  <div class="col-md-6">
+    <input id="id" ng-model="dataservice.id" placeholder="Service ID" class="form-control input-md" type="hidden">
+    <input id="title" ng-model="dataservice.title" placeholder="Service Name" class="form-control input-md" required="true" type="text" required>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="categoryId">Category</label>
+  <div class="col-md-6">
+    <select id="categoryId" ng-model="dataservice.categoryId" class="form-control" required>
+        <option ng-repeat="cateId in categories" value="{{ cateId.categoryId }}">{{ cateId.categoryName }}</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="priceId">Price</label>
+  <div class="col-md-6">
+    <select id="priceId" ng-model="dataservice.pricing" multiple style="width:100%" class="select2" required>
+        <option ng-repeat="price in prices" value="{{ price.priceId }}">{{ price.priceName }}</option>
+    </select>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="active">Active</label>
+  <div class="col-md-6">
+    <span class="onoffswitch">
+        <input type="checkbox" ng-model="dataservice.active" class="onoffswitch-checkbox" id="isactive" required>
+        <label class="onoffswitch-label" for="isactive"> 
+          <span class="onoffswitch-inner" data-swchon-text="YES" data-swchoff-text="NO"></span>
+          <span class="onoffswitch-switch"></span>
+        </label>
+    </span>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="main_image">Image</label>
+  <div class="col-md-6">
+    <input id="main_image" ng-model="dataservice.main_image" placeholder="Service Name" class="form-control input-md" required="true" type="text" required>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="teaser">Teaser</label>
+  <div class="col-md-6">
+    <input id="teaser" ng-model="dataservice.teaser" placeholder="Service Name" class="form-control input-md" required="true" type="text" required>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="content">Main Content</label>
+  <div class="col-md-6">
+    <input id="content" ng-model="dataservice.main_content" placeholder="Service Name" class="form-control input-md" required="true" type="text" required>
+  </div>
+</div>
+
+</fieldset>
+
+
+<!-- Button -->
+<div class="form-group">ng
+  <label class="col-md-4 control-label" for="register"></label>
+  <div class="col-md-6">
+    <button id="btnsubmit" name="btnsubmit" class="btn btn-primary" ng-click="submit()">Submit</button>
+    <button id="btncancel" name="btncancel" class="btn btn-primary" ng-click="cancel()">Cancel</button>
+  </div>
+</div>
+
+</fieldset>
+
+</form>
+
+<!-- JQUERY SELECT2 INPUT -->
+<script type="text/javascript">
+
+function getScope(ctrlName) {
+    var sel = 'form[ng-controller="' + ctrlName + '"]';
+    return angular.element(sel).scope();
+}
+
+function setValueDropdown() {
+    var $scope = getScope('formServicesCtrl');
+    var selectedPrices = typeof $scope.dataservice !== "undefined" ? $scope.dataservice.pricing : [];
+    var selectedCate = typeof $scope.dataservice !== "undefined" ? $scope.dataservice.categoryId : '';
+    $('#priceId').select2().select2('val', selectedPrices);
+    $('#categoryId').val(selectedCate);
+}   
+
+$(document).ready(function(){
+   setTimeout(setValueDropdown, 1000);
+});
+
+
+</script>

@@ -1,0 +1,14 @@
+<div class="jumbotron text-center">
+    <h1>Pricing &amp; Plans</h1>
+</div>
+<div class="container">
+  <div class="lst-services-container">
+     <div class="col-md-3 block-services" ng-repeat="plan in pricing.pricePlans">
+       <div class="title-service">
+         <h3> {{ plan.name | uppercase}} </h3>
+       </div>
+       <h5> {{ plan.price | currency }} / week </h5>
+       <p> {{ plan.content }} </p>
+     </div>
+  </div>
+</div>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+    <title>Rutledge Portal Administrator</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/customStyles.css">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
+    <link rel="stylesheet" type="text/css" href="css/angular-chart.css">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+    <link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+    <link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+    <link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+  </head>
+  <body ng-app="portal.admin">
+    <div ui-view="header"></div>
+    <div ui-view="leftmenu"></div>
+    <div id="main" role="main">
+      <div id="content" ui-view="content"></div>
+    </div>
+    <div ui-view="footer"></div>
+
+    <!-- Underlaid components -->
+    <script type="text/javascript" src="/lib/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/lib/js/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/lib/js/angular/angular-ui-router.min.js"></script>
+
+    <!-- main app -->
+    <script type="text/javascript" src="app.router.js"></script>
+
+    <script type="text/javascript" src="js/app.config.js"></script>
+    <script type="text/javascript" src="js/app.min.js"></script>
+    <script type="text/javascript" src="js/libs/Chart.min.js"></script>
+    <script type="text/javascript" src="js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/libs/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/angular/angular-datatables.min.js"></script>
+    <script type="text/javascript" src="js/plugin/select2/select2.min.js"></script>
+
+    <script type="text/javascript" src="components/assets/assetsCtrl.js"></script>
+
+    <script type="text/javascript" src="components/services/servicesCtrl.js"></script>
+    <script type="text/javascript" src="components/services/formServicesCtrl.js"></script>
+
+    <!-- for user pages -->
+    <script type="text/javascript" src="components/users/module.js"></script>
+    <script type="text/javascript" src="components/users/userSrvc.js"></script>
+    <!-- /users -->
+    <script type="text/javascript" src="components/users/normal/module.js"></script>
+    <script type="text/javascript" src="components/users/normal/listCtrl.js"></script>
+    <!-- /users/< new || detail/... > -->
+    <script type="text/javascript" src="components/users/normal/formCtrl.js"></script>
+    <!-- /system/users -->
+    <script type="text/javascript" src="components/users/system/module.js"></script>
+    <script type="text/javascript" src="components/users/system/adminlistCtrl.js"></script>
+    <!-- /system/users/< new || detail/... > -->
+    <script type="text/javascript" src="components/users/system/adminformCtrl.js"></script>
+
+    <!-- asset management -->
+    <script type="text/javascript" src="/lib/js/progressbar.js/progressbar.min.js"></script>
+
+    <!-- /asset -->
+    <!-- 'ng-file-upload' packages -->
+    <script type="text/javascript" src="/lib/js/ng-file-upload-shim/ng-file-upload-all.min.js"></script>
+    <!-- running angular sub-module -->
+    <script type="text/javascript" src="components/asset/module.js"></script>
+    <script type="text/javascript" src="components/asset/uploadCtrl.js"></script>
+
+    <!-- /uploads -->
+    <!-- 'droplet' packages -->
+    <script type="text/javascript" src="/lib/js/ng-droplet/ng-droplet.min.js"></script>
+    <!-- running angular sub-module -->
+    <script type="text/javascript" src="components/droplet/module.js"></script>
+    <script type="text/javascript" src="components/droplet/boxDrtv.js"></script>
+    <script type="text/javascript" src="components/droplet/boxCtrl.js"></script>
+
+
+  </body>
+
+</html>

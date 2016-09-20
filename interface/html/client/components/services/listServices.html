@@ -1,0 +1,11 @@
+<div class="jumbotron text-center">
+    <h1>Rutledge Portal - List of our Services</h1>
+</div>
+<div class="container">
+  <div class="lst-services-container">
+     <div class="col-md-3 block-services" ng-repeat="category in lstData">
+       <div class="title-service">{{ category.categoryName | uppercase}}</div>
+        <block-service block="category.services"></block-service>
+     </div>
+  </div>
+</div>

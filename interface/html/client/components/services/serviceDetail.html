@@ -1,0 +1,30 @@
+<div class="jumbotron text-center">
+    <h1>{{ service.title }}</h1>
+</div>
+<section id="service-overview-qualities-section">
+    <div class="service-overview-qualities">
+        <div class="row">
+            <div class="col-md-12">
+                {{ service.main_content }}
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container lst-services-container">
+ 	<div class="col-md-3 block-services" ng-repeat="plan in prices">
+	    <div class="title-service">
+	        <h3> {{ plan.name | uppercase}} </h3>
+	    </div>
+    	<h5> {{ plan.price | currency }} / week </h5>
+    	<p> {{ plan.content }} </p>
+	</div>
+</div>
+<!-- <section id="service-overview-features-section ">
+    <div class="service-overview-features">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+        </div>
+    </div>
+</section> -->

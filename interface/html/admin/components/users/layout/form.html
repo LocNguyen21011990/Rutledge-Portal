@@ -1,0 +1,133 @@
+<div class="col-md-offset-2 col-md-8">
+
+<form name="infoForm" class="form-horizontal"
+  ng-submit="form.save(infoForm.$valid)">
+
+<legend> {{ form.title }} </legend>
+
+<div class="alert alert-warning text-center" ng-show="!form.admin && form.locked">
+  <strong>Warning!</strong> &nbsp;&nbsp;No company available.
+</div>
+
+<!-- Created Date -->
+<div class="form-group" ng-show="!!form.user">
+  <label class="control-label col-md-4">Registration Date</label>
+  <div class="col-md-6">
+    <label class="control-label" ng-bind="form.inputs.created"></label>
+  </div>
+</div>
+
+<!-- User's Login ID -->
+<div class="form-group">
+  <label class="control-label col-md-4" for="usr_acc">Account</label>
+  <div class="col-md-6">
+    <input type="text" class="form-control" name="usr_acc"
+      required ng-model="form.inputs.usr_acc" ng-minlength="3">
+    <p ng-show="infoForm.usr_acc.$dirty && infoForm.usr_acc.$error.required"
+      class="help-block">This field is required!</p>
+    <p ng-show="infoForm.usr_acc.$dirty && infoForm.usr_acc.$error.minlength"
+      class="help-block">The account name is too short</p>
+  </div>
+</div>
+
+<!-- Password -->
+<div class="form-group">
+  <label class="control-label col-md-4" for="usr_pwd">Password</label>
+  <div class="col-md-6">
+    <input type="password" class="form-control" name="usr_pwd"
+      required ng-model="form.inputs.usr_pwd" >
+    <p ng-show="infoForm.usr_pwd.$dirty && infoForm.usr_pwd.$error.required"
+      class="help-block">This field is required!</p>
+    <p ng-show="infoForm.usr_repwd.$dirty && infoForm.usr_pwd.$dirty && (form.repwd != form.inputs.usr_pwd)"
+      class="help-block">Passwords don't matched!</p>
+  </div>
+</div>
+
+<!-- Confirm Password -->
+<div class="form-group">
+  <label class="control-label col-md-4" for="usr_repwd">Confirm Password</label>
+  <div class="col-md-6">
+    <input type="password" class="form-control" name="usr_repwd"
+      required ng-model="form.repwd">
+    <p ng-show="infoForm.usr_repwd.$dirty && infoForm.usr_pwd.$dirty && (form.repwd != form.inputs.usr_pwd)"
+      class="help-block">Passwords don't matched!</p>
+  </div>
+</div>
+
+<!-- User's name -->
+<div class="form-group">
+  <label class="control-label col-md-4" for="usr_name">Display Name</label>
+  <div class="col-md-6">
+    <input type="text" class="form-control" name="usr_name"
+      required ng-model="form.inputs.usr_name">
+    <p ng-show="infoForm.usr_name.$dirty && infoForm.usr_name.$error.required"
+      class="help-block">This field is required!</p>
+  </div>
+</div>
+
+<!-- Email address -->
+<div class="form-group">
+  <label class="control-label col-md-4" for="usr_email">Email address</label>
+  <div class="col-md-6">
+    <input type="email" class="form-control" name="usr_email"
+      required ng-model="form.inputs.usr_email">
+    <p ng-show="infoForm.usr_email.$dirty && infoForm.usr_email.$invalid"
+      class="help-block">This is not a valid email!</p>
+  </div>
+</div>
+
+<!-- Company that this user is belonged to -->
+<div class="form-group" ng-show="!form.admin">
+  <label class="col-md-4 control-label" for="company">Company</label>
+  <div class="col-md-6">
+    <select id="company" name="company" class="form-control"
+      ng-model="form.inputs.company" ng-disabled="form.admin" ng-required="!form.admin">
+      <option ng-repeat="cpn in form.companies" value="{{ cpn.id }}">{{ cpn.company_name }}</option>
+    </select>
+  </div>
+</div>
+
+<!-- Active status -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="usr_active">Active</label>
+  <div class="col-md-6">
+    <span class="onoffswitch">
+      <input type="checkbox" name="usr_active" ng-model="form.inputs.usr_active"
+        class="onoffswitch-checkbox" id="isactive">
+      <label class="onoffswitch-label" for="isactive">
+        <span class="onoffswitch-inner" data-swchon-text="YES" data-swchoff-text="NO"></span>
+        <span class="onoffswitch-switch"></span>
+      </label>
+    </span>
+  </div>
+</div>
+
+
+<br>
+<!-- Actions -->
+<div class="form-group">
+  <div class="col-md-4"></div>
+
+  <!-- <div class="col-md-3">
+    <button id="btnsave" name="btnsave" class="btn " ng-click="form.cancel()">Back</button>
+  </div> -->
+
+  <div class="col-md-1">
+    <button id="btnsave" name="btnsave" class="btn btn-primary"
+      type="submit" ng-disabled="infoForm.$invalid">
+      Save
+    </button>
+  </div>
+
+  <div class="col-md-1" ng-show="!!form.user">
+    <button id="btndelete" name="btndelete" class="btn btn-danger"
+      ng-click="form.remove()" ng-disabled="!form.user">
+      Delete
+    </button>
+  </div>
+
+</div>
+
+</form>
+
+</div>

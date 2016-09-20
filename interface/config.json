@@ -1,0 +1,9 @@
+{
+  "default": {
+    "port": 8800,
+    "interface": {
+      "JIOTARO-PC": "Ethernet 3",
+      "Asus": "Ethernet"
+    }
+  }
+}

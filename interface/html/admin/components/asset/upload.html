@@ -1,0 +1,12 @@
+<h3> Upload asset(s) </h3>
+
+<div ngf-select="" ngf-drop="" ng-model="upload.files" ngf-model-invalid="invalidFiles"
+  ng-model-options="modelOptionsObj" ngf-multiple="multiple"
+  ngf-pattern="pattern" ngf-accept="acceptSelect" ng-disabled="disabled"
+  ngf-capture="capture" ngf-drag-over-class="dragOverClassObj" ngf-validate="validateObj"
+  ngf-resize="resizeObj" ngf-resize-if="resizeIfFn($file, $width, $height)"
+  ngf-dimensions="dimensionsFn($file, $width, $height)" ngf-duration="durationFn($file, $duration)"
+  ngf-keep="keepDistinct ? 'distinct' : keep" ngf-fix-orientation="orientation" ngf-allow-dir="allowDir"
+  class="drop-box" ngf-drop-available="dropAvailable">
+  Select File<span ng-show="dropAvailable"> or Drop File</span>
+</div>

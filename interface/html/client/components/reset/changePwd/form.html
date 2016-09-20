@@ -1,0 +1,31 @@
+<div class="col-lg-offset-3 col-lg-6">
+<br>
+<br>
+<br>
+<form class="form-horizontal" role="form">
+
+<legend> Enter new password </legend>
+
+<div class="form-group">
+  <label class="control-label col-md-4" for="pwd">New Password</label>
+  <div class="col-md-6">
+    <input type="password" class="form-control" id="pwd" ng-model="reset.pwd" required="">
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-md-4" for="repwd">Confirm Password</label>
+  <div class="col-md-6">
+    <input type="password" class="form-control" id="repwd" ng-model="reset.repwd" required="">
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-md-offset-4 col-md-6">
+    <button ng-click="reset.go()" class="btn btn-primary">Submit New Password</button>
+  </div>
+</div>
+
+</form>
+
+</div>

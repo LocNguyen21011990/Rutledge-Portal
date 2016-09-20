@@ -1,0 +1,31 @@
+.lst-services-container {
+	/*padding: 40px;*/
+}
+
+.block-services {
+	margin-bottom: 10px;
+	padding-top:20px;
+	padding-left: 20px;
+	text-align: left;
+	background-color: #eee;
+	border-radius: 5px;
+	min-height: 200px;
+	max-width: 270px;
+	margin-right: 10px;
+}
+
+.title-service {
+	font-size: 13px;
+	color: #428bca;
+	margin-bottom: 15px;
+}
+
+.service-overview-qualities {
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+.service-overview-features {
+    margin-bottom: 2rem;
+}

@@ -1,0 +1,38 @@
+<form class="form-horizontal" name="assetForm">
+
+  <legend>Asset Detail</legend>
+
+  <fieldset>
+
+    <div class="form-group" ng-class="{ 'has-error': assetForm.title.$invalid && !assetForm.title.$pristine }">
+      <label class="control-label col-md-4" for="title">Title</label>
+      <div class="col-md-6">
+        <input type="text" class="form-control" name="title" ng-model="asset.title" required>
+        <p ng-show="assetForm.title.$dirty && assetForm.title.$error.required"
+          class="help-block">This field is required!</p>
+      </div>
+    </div>
+
+
+    <br>Photo:
+    <input type="file" ngf-select ng-model="upload.picFile" name="file"
+           accept="image/*" ngf-max-size="2MB" required
+           ngf-model-invalid="errorFile">
+    <i ng-show="assetForm.file.$error.required">*required</i><br>
+    <i ng-show="assetForm.file.$error.maxSize">File too large
+        {{ errorFile.size / 1000000|number:1 }} MB: max 2M</i>
+    <button ng-click="upload.picFile = null" ng-show="upload.picFile">Remove</button>
+
+    <br>
+    <button ng-disabled="!assetForm.$valid" ng-click="upload.uploadPic(upload.picFile)"> Submit </button>
+
+    <span class="progress" ng-show="upload.picFile.progress >= 0">
+      <div style="width:{{ upload.picFile.progress }}%"
+          ng-bind="upload.picFile.progress + '%'"></div>
+    </span>
+    <span ng-show="upload.picFile.result">Upload Successful</span>
+    <span class="err" ng-show="errorMsg">{{ errorMsg }}</span>
+
+  </fieldset>
+
+</form>

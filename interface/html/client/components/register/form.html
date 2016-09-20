@@ -1,0 +1,144 @@
+<form class="form-horizontal">
+
+<legend> Company Registration </legend>
+
+<fieldset id="admin_account">
+
+<!-- Admin account -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="usr_acc">Registry Account </label>
+  <div class="col-md-6">
+    <input id="usr_acc" ng-model="register.form.usr_acc" placeholder="ex: admin..." class="form-control input-md" required="" type="text">
+  </div>
+</div>
+
+<!-- Admin password-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="usr_pwd">Password</label>
+  <div class="col-md-6">
+    <input id="usr_pwd" ng-model="register.form.usr_pwd" placeholder="ex: admin..." class="form-control input-md" required="" type="password">
+  </div>
+</div>
+
+<!-- Password repeat -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="usr_repwd">Repeat Password </label>
+  <div class="col-md-6">
+    <input id="usr_repwd" ng-model="register.form.usr_repwd" placeholder="ex: admin..." class="form-control input-md" required="" type="password">
+  </div>
+</div>
+
+</fieldset>
+
+<fieldset id="company_info">
+
+<!-- Mame of company -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cpn_name">Company Name</label>
+  <div class="col-md-6">
+    <input id="cpn_name" ng-model="register.form.cpn_name" placeholder="ex: Rutledge Global..." class="form-control input-md" required="" type="text">
+  </div>
+</div>
+
+<!-- Contact person's title -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cpn_title">Title</label>
+  <div class="col-md-6">
+    <select id="cpn_country" ng-model="register.form.cpn_title" class="form-control">
+      <option value="Mr">Mr.</option>
+      <option value="Mrs">Mrs.</option>
+      <option value="Ms">Ms.</option>
+    </select>
+  </div>
+</div>
+
+<!-- Contact person -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cpn_name">Contact Person</label>
+  <div class="col-md-3">
+    <input id="cpn_person" ng-change="register.form.usr_firstnm = register.form.cpn_firstnm"ng-model="register.form.cpn_firstnm" placeholder="First name" class="form-control input-md" type="text">
+  </div>
+  <div class="col-md-3">
+    <input id="cpn_person" ng-change="register.form.usr_lastnm = register.form.cpn_lastnm"ng-model="register.form.cpn_lastnm" placeholder="Last name" class="form-control input-md" type="text">
+  </div>
+</div>
+
+<!-- Contact person's position in the company -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cpn_job">Job title</label>
+  <div class="col-md-6">
+    <input id="cpn_person" ng-model="register.form.cpn_job" placeholder="Position" class="form-control input-md" type="text">
+  </div>
+</div>
+
+<!-- Email of company -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cpn_email">Email</label>
+  <div class="col-md-6">
+    <input id="cpn_email" ng-change="register.form.usr_email = register.form.cpn_email" ng-model="register.form.cpn_email" placeholder="ex: person@company.domain..." class="form-control input-md" required="" type="text">
+  </div>
+</div>
+
+<!-- Phone of company -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cpn_phone">Phone</label>
+  <div class="col-md-6">
+    <input id="cpn_phone" ng-model="register.form.cpn_phone" placeholder="ex: (+65) 65150055..." class="form-control input-md" required="" type="text">
+  </div>
+</div>
+
+<!-- Street of company -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cpn_street">Address</label>
+  <div class="col-md-6">
+    <input id="cpn_street" ng-model="register.form.cpn_addr1" placeholder="ex: 34 Toh Guan Road East..." class="form-control input-md" required="" type="text">
+  </div>
+</div>
+
+<!-- Town selection -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cpn_town">Town</label>
+  <div class="col-md-6">
+    <input id="cpn_postal" ng-model="register.form.cpn_town" placeholder="ex: Singapore..." class="form-control input-md" required="" type="text">
+  </div>
+</div>
+
+<!-- County selection -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cpn_county">County</label>
+  <div class="col-md-6">
+    <input id="cpn_postal" ng-model="register.form.cpn_county" placeholder="ex: Singapore..." class="form-control input-md" required="" type="text">
+  </div>
+</div>
+
+<!-- Country selection -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cpn_country">Country</label>
+  <div class="col-md-6">
+    <select id="cpn_country" ng-model="register.form.cpn_country" class="form-control">
+      <option value="1">Singapore</option>
+      <option value="2">Vietnam</option>
+      <option value="3">Malaysia</option>
+    </select>
+  </div>
+</div>
+
+<!-- Zip code -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cpn_postal">Zip Code</label>
+  <div class="col-md-6">
+    <input id="cpn_postal" ng-model="register.form.cpn_zipcode" placeholder="ex: 608579..." class="form-control input-md" required="" type="text">
+  </div>
+</div>
+
+<!-- Register Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="register"></label>
+  <div class="col-md-6">
+    <button id="register" name="register" class="btn btn-primary" ng-click="register.go()">Join us!</button>
+  </div>
+</div>
+
+</fieldset>
+
+</form>

@@ -1,0 +1,22 @@
+<legend>List of {{ list.title }}</legend>
+<div class="row">
+
+  <div class="col-md-4">
+	  <button class="btn btn-primary" ng-click="list.add()">
+      <i class="fa fa-plus"></i> New User
+    </button>
+  </div>
+
+</div>
+
+<br>
+
+<div class="row">
+
+  <div id="servicesTable" class="col-md-12">
+		<table  class="hover row-border" width="100%" datatable=""
+      dt-options="list.opts" dt-columns="list.cols" dt-instance="list.instance" >
+	  </table>
+	</div>
+
+</div>
